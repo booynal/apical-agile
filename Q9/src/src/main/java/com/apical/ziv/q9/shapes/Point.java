@@ -17,14 +17,14 @@ public class Point extends Shape {
 	private float y;
 
 	public Point(float x, float y) {
-		super(ShapeTypeConsts.POINT);
+		super(ShapeTypeConsts.POINT, true);
 		this.x = x;
 		this.y = y;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s at (%.2f, ­%.2f)", getIdLong(), getName(), x, y);
+		return String.format("%s at (%.2f, ­%.2f)", getName(), x, y);
 	}
 
 	public float getX() {

@@ -25,6 +25,10 @@ public abstract class Shape implements Idable {
 		idLong = idGenerator.incrementAndGet();
 	}
 
+	protected Shape(String name, boolean idNotIncrement) {
+		this.name = name;
+	}
+
 	@Override
 	public String toId() {
 		return String.format("%s_%s", name, idLong);
