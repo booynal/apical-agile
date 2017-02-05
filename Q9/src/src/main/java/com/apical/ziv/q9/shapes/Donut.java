@@ -51,7 +51,7 @@ public class Donut extends Circle {
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s with centre at (%.2f, %.2f) and innerRadius %.2f and outterRadius %.2f", getIdLong(), getType(), getX(), getY(), getInnerRadius(), getOutterRadius());
+		return String.format("shape %s: %s with centre at (%.2f, %.2f) and innerRadius %.2f and outterRadius %.2f", getId(), getType(), getX(), getY(), getInnerRadius(), getOutterRadius());
 	}
 
 	@Override

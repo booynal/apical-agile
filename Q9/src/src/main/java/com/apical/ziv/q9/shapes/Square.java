@@ -33,7 +33,7 @@ public class Square extends ClosedShape {
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s with top left corner at (%.2f, %.2f) and side %.2f", getIdLong(), getType(), x, y, sideLength);
+		return String.format("shape %s: %s with top left corner at (%.2f, %.2f) and side %.2f", getId(), getType(), x, y, sideLength);
 	}
 
 	public float getX() {

@@ -9,8 +9,8 @@ package com.apical.ziv.q9.interfaces;
  */
 public interface Shape {
 
-	String toId();
-
 	String getType();
+
+	long getId();
 
 }

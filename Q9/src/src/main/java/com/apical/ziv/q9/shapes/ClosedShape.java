@@ -17,17 +17,12 @@ public abstract class ClosedShape implements Shape {
 
 	private static AtomicLong idGenerator = new AtomicLong();
 
-	private long idLong;
+	private long id;
 	private String type;
 
 	protected ClosedShape(String type) {
 		this.type = type;
-		idLong = idGenerator.incrementAndGet();
-	}
-
-	@Override
-	public String toId() {
-		return String.format("%s_%s", type, idLong);
+		id = idGenerator.incrementAndGet();
 	}
 
 	@Override
@@ -39,12 +34,12 @@ public abstract class ClosedShape implements Shape {
 		type = name;
 	}
 
-	public long getIdLong() {
-		return idLong;
+	public long getId() {
+		return id;
 	}
 
-	public void setIdLong(long idLong) {
-		this.idLong = idLong;
+	public void setId(long idLong) {
+		this.id = idLong;
 	}
 
 	/**

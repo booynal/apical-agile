@@ -34,7 +34,7 @@ public class Circle extends ClosedShape {
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s with centre at (%.2f, %.2f) and radius %.2f", getIdLong(), getType(), x, y, radius);
+		return String.format("shape %s: %s with centre at (%.2f, %.2f) and radius %.2f", getId(), getType(), x, y, radius);
 	}
 
 	public float getX() {

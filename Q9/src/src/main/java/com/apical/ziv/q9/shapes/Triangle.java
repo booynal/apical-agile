@@ -33,7 +33,7 @@ public class Triangle extends ClosedShape {
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s with point ont at (%.2f, %.2f) and point two at (%.2f, %.2f) and point three at (%.2f, %.2f)", getIdLong(), getType(), x1, y1, x2, y2, x3, y3);
+		return String.format("shape %s: %s with point ont at (%.2f, %.2f) and point two at (%.2f, %.2f) and point three at (%.2f, %.2f)", getId(), getType(), x1, y1, x2, y2, x3, y3);
 	}
 
 	public float getX1() {
