@@ -22,7 +22,7 @@ public class Rectangle extends Square {
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s with top left corner at (%.2f, ­%.2f) and side one %.2f and side two %.2f", getIdLong(), getName(), getX(), getY(), getSideLength(), getHeight());
+		return String.format("shape %s: %s with top left corner at (%.2f, %.2f) and side one %.2f and side two %.2f", getIdLong(), getType(), getX(), getY(), getSideLength(), getHeight());
 	}
 
 	public float getWidth() {

@@ -9,7 +9,7 @@ import org.apache.commons.collections.CollectionUtils;
 
 import com.apical.ziv.q9.interfaces.Command;
 import com.apical.ziv.q9.shapes.Point;
-import com.apical.ziv.q9.shapes.Shape;
+import com.apical.ziv.q9.shapes.ClosedShape;
 import com.apical.ziv.q9.shapes.memory.ShapeMemory;
 import com.apical.ziv.q9.spring.SpringContext;
 
@@ -30,11 +30,11 @@ public class PointCommand implements Command {
 
 	@Override
 	public void execute() {
-		List<Shape> allShapes = shapeMemory.getAllShapes();
+		List<ClosedShape> allShapes = shapeMemory.getAllShapes();
 		if (CollectionUtils.isNotEmpty(allShapes)) {
 			System.out.println(point);
 			float totalArea = 0;
-			for (Shape shape : allShapes) {
+			for (ClosedShape shape : allShapes) {
 				if (shape.inside(point)) {
 					float area = shape.calcArea();
 					totalArea += area;

@@ -11,7 +11,7 @@ import com.apical.ziv.q9.consts.ShapeTypeConsts;
  * @author ziv
  *
  */
-public class Square extends Shape {
+public class Square extends ClosedShape {
 
 	private float x;
 	private float y;
@@ -33,7 +33,7 @@ public class Square extends Shape {
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s with top left corner at (%.2f, ­%.2f) and side %.2f", getIdLong(), getName(), x, y, sideLength);
+		return String.format("shape %s: %s with top left corner at (%.2f, %.2f) and side %.2f", getIdLong(), getType(), x, y, sideLength);
 	}
 
 	public float getX() {
@@ -74,6 +74,12 @@ public class Square extends Shape {
 	@Override
 	public float calcArea() {
 		return (float) Math.pow(sideLength, 2);
+	}
+
+	@Override
+	public Rectangle getExternalRectangle() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

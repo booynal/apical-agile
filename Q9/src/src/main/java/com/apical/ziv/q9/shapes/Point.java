@@ -2,7 +2,7 @@
  * Point.java
  */
 package com.apical.ziv.q9.shapes;
-
+import com.apical.ziv.q9.interfaces.*;
 import com.apical.ziv.q9.consts.ShapeTypeConsts;
 
 /**
@@ -11,20 +11,19 @@ import com.apical.ziv.q9.consts.ShapeTypeConsts;
  * @author ziv
  *
  */
-public class Point extends Shape {
+public class Point implements Shape {
 
 	private float x;
 	private float y;
 
 	public Point(float x, float y) {
-		super(ShapeTypeConsts.POINT, true);
 		this.x = x;
 		this.y = y;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("%s at (%.2f, ­%.2f)", getName(), x, y);
+		return String.format("Point at (%.2f, %.2f)",  x, y);
 	}
 
 	public float getX() {
@@ -43,14 +42,17 @@ public class Point extends Shape {
 		this.y = y;
 	}
 
+
+
 	@Override
-	public boolean inside(Point point) {
-		return false;
+	public String toId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public float calcArea() {
-		return 0;
+	public String getType() {
+		return "Point";
 	}
 
 }

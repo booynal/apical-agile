@@ -5,7 +5,7 @@ package com.apical.ziv.q9.shapes;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.apical.ziv.q9.interfaces.Idable;
+import com.apical.ziv.q9.interfaces.Shape;
 
 /**
  * 图形
@@ -13,20 +13,16 @@ import com.apical.ziv.q9.interfaces.Idable;
  * @author ziv
  *
  */
-public abstract class Shape implements Idable {
+public abstract class ClosedShape implements Shape {
 
 	private static AtomicLong idGenerator = new AtomicLong();
 
 	private long idLong;
 	private String name;
 
-	protected Shape(String name) {
+	protected ClosedShape(String name) {
 		this.name = name;
 		idLong = idGenerator.incrementAndGet();
-	}
-
-	protected Shape(String name, boolean idNotIncrement) {
-		this.name = name;
 	}
 
 	@Override
@@ -34,7 +30,7 @@ public abstract class Shape implements Idable {
 		return String.format("%s_%s", name, idLong);
 	}
 
-	public String getName() {
+	public String getType() {
 		return name;
 	}
 
@@ -63,4 +59,6 @@ public abstract class Shape implements Idable {
 	 * 计算图形的面积
 	 */
 	public abstract float calcArea();
+	
+	public abstract Rectangle getExternalRectangle();
 }

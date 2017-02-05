@@ -11,7 +11,7 @@ import com.apical.ziv.q9.exceptions.ShapeCreateException;
 import com.apical.ziv.q9.interfaces.Usageable;
 import com.apical.ziv.q9.interfaces.Validatable;
 import com.apical.ziv.q9.shapes.Rectangle;
-import com.apical.ziv.q9.shapes.Shape;
+import com.apical.ziv.q9.shapes.ClosedShape;
 import com.apical.ziv.q9.shapes.usage.RectangleUsager;
 import com.apical.ziv.q9.shapes.validators.RectangleValidator;
 import com.apical.ziv.q9.utils.NumberUtil;
@@ -44,7 +44,7 @@ public class RectangleCreator extends AbstractShapeCreator {
 	}
 
 	@Override
-	protected Shape createShape(String[] words) throws ShapeCreateException {
+	protected ClosedShape createShape(String[] words) throws ShapeCreateException {
 		float x = NumberUtil.parseFloat(words[1]);
 		float y = NumberUtil.parseFloat(words[2]);
 		float sideLength = NumberUtil.parseFloat(words[3]);

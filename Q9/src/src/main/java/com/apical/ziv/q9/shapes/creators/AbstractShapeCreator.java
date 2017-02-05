@@ -9,9 +9,10 @@ import com.apical.ziv.q9.exceptions.NotImplementedException;
 import com.apical.ziv.q9.exceptions.ShapeCreateException;
 import com.apical.ziv.q9.exceptions.ValidateException;
 import com.apical.ziv.q9.interfaces.Creatable;
+import com.apical.ziv.q9.interfaces.Shape;
 import com.apical.ziv.q9.interfaces.Usageable;
 import com.apical.ziv.q9.interfaces.Validatable;
-import com.apical.ziv.q9.shapes.Shape;
+import com.apical.ziv.q9.shapes.ClosedShape;
 
 /**
  * @author ziv
@@ -36,7 +37,7 @@ public abstract class AbstractShapeCreator implements Creatable<Shape> {
 		throw new NotImplementedException();
 	}
 
-	protected Shape createShape(String[] words) throws ShapeCreateException {
+	protected ClosedShape createShape(String[] words) throws ShapeCreateException {
 		throw new NotImplementedException();
 	}
 

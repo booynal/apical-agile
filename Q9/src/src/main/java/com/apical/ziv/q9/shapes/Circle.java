@@ -12,7 +12,7 @@ import com.apical.ziv.q9.utils.DistanceUtil;
  * @author ziv
  *
  */
-public class Circle extends Shape {
+public class Circle extends ClosedShape {
 
 	private float x;
 	private float y;
@@ -34,7 +34,7 @@ public class Circle extends Shape {
 
 	@Override
 	public String toString() {
-		return String.format("shape %s: %s with centre at (%.2f, ­%.2f) and radius %.2f", getIdLong(), getName(), x, y, radius);
+		return String.format("shape %s: %s with centre at (%.2f, %.2f) and radius %.2f", getIdLong(), getType(), x, y, radius);
 	}
 
 	public float getX() {
@@ -69,6 +69,15 @@ public class Circle extends Shape {
 	@Override
 	public float calcArea() {
 		return (float) (Math.PI * Math.pow(radius, 2));
+	}
+
+	@Override
+	public Rectangle getExternalRectangle() {
+		float rx=x-radius ;
+		float ry=y+radius;
+		float sideLength = 2*radius;
+		Rectangle extRect = new Rectangle(rx,ry,sideLength,sideLength);
+		return extRect;
 	}
 
 }

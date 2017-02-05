@@ -15,7 +15,8 @@ import org.springframework.stereotype.Component;
 
 import com.apical.ziv.q9.exceptions.ShapeCreateException;
 import com.apical.ziv.q9.interfaces.Creatable;
-import com.apical.ziv.q9.shapes.Shape;
+import com.apical.ziv.q9.interfaces.Shape;
+import com.apical.ziv.q9.shapes.ClosedShape;
 
 /**
  * @author ziv

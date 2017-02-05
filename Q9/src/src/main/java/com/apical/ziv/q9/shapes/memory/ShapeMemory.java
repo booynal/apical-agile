@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.apical.ziv.q9.shapes.Shape;
+import com.apical.ziv.q9.shapes.ClosedShape;
 
 /**
  * @author ziv
@@ -17,13 +17,13 @@ import com.apical.ziv.q9.shapes.Shape;
 @Component
 public class ShapeMemory {
 
-	private List<Shape> shapes = new ArrayList<>();
+	private List<ClosedShape> shapes = new ArrayList<>();
 
-	public void addShape(Shape shape) {
+	public void addShape(ClosedShape shape) {
 		shapes.add(shape);
 	}
 
-	public List<Shape> getAllShapes() {
+	public List<ClosedShape> getAllShapes() {
 		return new ArrayList<>(shapes);
 	}
 
