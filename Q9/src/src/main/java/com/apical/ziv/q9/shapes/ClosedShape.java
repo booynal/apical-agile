@@ -20,9 +20,12 @@ public abstract class ClosedShape implements Shape {
 	private long id;
 	private String type;
 
+	{
+		id = idGenerator.incrementAndGet();
+	}
+
 	protected ClosedShape(String type) {
 		this.type = type;
-		id = idGenerator.incrementAndGet();
 	}
 
 	@Override
@@ -34,12 +37,13 @@ public abstract class ClosedShape implements Shape {
 		type = name;
 	}
 
+	@Override
 	public long getId() {
 		return id;
 	}
 
 	public void setId(long idLong) {
-		this.id = idLong;
+		id = idLong;
 	}
 
 	/**
