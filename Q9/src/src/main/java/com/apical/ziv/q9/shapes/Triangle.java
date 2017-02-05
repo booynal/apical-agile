@@ -88,28 +88,26 @@ public class Triangle extends ClosedShape {
 	public boolean inside(Point point) {
 		float x = point.getX();
 		float y = point.getY();
-		float mx1=x-x1;
-		float my1=y-y1;
-		
-		float mx2=x-x2;
-		float my2=y-y2;
-		
-		float mx3=x-x3;
-		float my3=y-y3;
-		
-		float a = mx1*my2 - my1*mx2;
-		float b = mx2*my3 - my2*mx3;
-		float c = mx3*my1 - my3*mx1;
-		if((a <= 0 && b <= 0 && c <= 0)||
-			(a > 0 && b > 0 && c > 0))
-		{
+		float mx1 = x - x1;
+		float my1 = y - y1;
+
+		float mx2 = x - x2;
+		float my2 = y - y2;
+
+		float mx3 = x - x3;
+		float my3 = y - y3;
+
+		float a = mx1 * my2 - my1 * mx2;
+		float b = mx2 * my3 - my2 * mx3;
+		float c = mx3 * my1 - my3 * mx1;
+		if ((a <= 0 && b <= 0 && c <= 0) || (a > 0 && b > 0 && c > 0)) {
 			return true;
-		}else{
+		} else {
 			return false;
 		}
-		
+
 	}
-	
+
 	/**
 	 * 已知三边求面积（海伦公式）<br/>
 	 * S=√[p(p-a)(p-b)(p-c)] <br/>
@@ -127,13 +125,13 @@ public class Triangle extends ClosedShape {
 
 	@Override
 	public Rectangle getExternalRectangle() {
-		float minx= Math.min(x1,Math.min(x2,x3));
-		float miny =Math.min(y1,Math.min(y2,y3));
-		float maxx =Math.max(x1,Math.max(x2,x3));
-		float maxy =Math.max(y1,Math.max(y2,y3));
-		Rectangle rect = new Rectangle(minx,maxy,maxx-minx,maxy-miny);
+		float minx = Math.min(x1, Math.min(x2, x3));
+		float miny = Math.min(y1, Math.min(y2, y3));
+		float maxx = Math.max(x1, Math.max(x2, x3));
+		float maxy = Math.max(y1, Math.max(y2, y3));
+		Rectangle rect = new Rectangle(minx, maxy, maxx - minx, maxy - miny);
 		return rect;
-		
+
 	}
 
 }

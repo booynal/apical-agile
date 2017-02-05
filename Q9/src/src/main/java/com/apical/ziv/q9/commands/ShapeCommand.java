@@ -8,8 +8,8 @@ import com.apical.ziv.q9.consts.ShapeTypeConsts;
 import com.apical.ziv.q9.exceptions.ShapeException;
 import com.apical.ziv.q9.interfaces.Command;
 import com.apical.ziv.q9.interfaces.Shape;
-import com.apical.ziv.q9.shapes.Point;
 import com.apical.ziv.q9.shapes.ClosedShape;
+import com.apical.ziv.q9.shapes.Point;
 import com.apical.ziv.q9.shapes.creators.ShapeFactory;
 import com.apical.ziv.q9.shapes.memory.ShapeMemory;
 import com.apical.ziv.q9.spring.SpringContext;
@@ -35,8 +35,8 @@ public class ShapeCommand implements Command {
 		if (null != shape) {
 			if (ShapeTypeConsts.isPoint(shape.getType())) {
 				new PointCommand((Point) shape).execute();
-			} else if(shape instanceof ClosedShape){
-				shapeMemory.addShape((ClosedShape)shape);
+			} else if (shape instanceof ClosedShape) {
+				shapeMemory.addShape((ClosedShape) shape);
 				System.out.println(shape);
 			}
 		} else {

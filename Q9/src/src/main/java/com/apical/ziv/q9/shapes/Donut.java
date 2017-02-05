@@ -20,7 +20,7 @@ public class Donut extends Circle {
 		super(ShapeTypeConsts.DONUT, x, y, innerRadius);
 		this.outterRadius = outterRadius;
 	}
-	
+
 	public float getInnerRadius() {
 		return super.getRadius();
 	}

@@ -73,11 +73,10 @@ public class Circle extends ClosedShape {
 
 	@Override
 	public Rectangle getExternalRectangle() {
-		float rx=x-radius ;
-		float ry=y+radius;
-		float sideLength = 2*radius;
-		Rectangle extRect = new Rectangle(rx,ry,sideLength,sideLength);
-		return extRect;
+		float rx = x - radius;
+		float ry = y + radius;
+		float sideLength = 2 * radius;
+		return new Rectangle(rx, ry, sideLength, sideLength);
 	}
 
 }

@@ -59,6 +59,6 @@ public abstract class ClosedShape implements Shape {
 	 * 计算图形的面积
 	 */
 	public abstract float calcArea();
-	
+
 	public abstract Rectangle getExternalRectangle();
 }

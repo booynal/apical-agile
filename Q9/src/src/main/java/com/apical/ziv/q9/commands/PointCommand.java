@@ -8,8 +8,8 @@ import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 
 import com.apical.ziv.q9.interfaces.Command;
-import com.apical.ziv.q9.shapes.Point;
 import com.apical.ziv.q9.shapes.ClosedShape;
+import com.apical.ziv.q9.shapes.Point;
 import com.apical.ziv.q9.shapes.memory.ShapeMemory;
 import com.apical.ziv.q9.spring.SpringContext;
 
