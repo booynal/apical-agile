@@ -77,4 +77,9 @@ public class Rectangle extends Square {
 		return getWidth() * getHeight();
 	}
 
+	@Override
+	public Rectangle getExternalRectangle() {
+		return this;
+	}
+
 }

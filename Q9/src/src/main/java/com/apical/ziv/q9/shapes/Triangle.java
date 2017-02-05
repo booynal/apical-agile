@@ -100,12 +100,7 @@ public class Triangle extends ClosedShape {
 		float a = mx1 * my2 - my1 * mx2;
 		float b = mx2 * my3 - my2 * mx3;
 		float c = mx3 * my1 - my3 * mx1;
-		if ((a <= 0 && b <= 0 && c <= 0) || (a > 0 && b > 0 && c > 0)) {
-			return true;
-		} else {
-			return false;
-		}
-
+		return a <= 0 && b <= 0 && c <= 0 || a > 0 && b > 0 && c > 0;
 	}
 
 	/**
@@ -129,8 +124,7 @@ public class Triangle extends ClosedShape {
 		float miny = Math.min(y1, Math.min(y2, y3));
 		float maxx = Math.max(x1, Math.max(x2, x3));
 		float maxy = Math.max(y1, Math.max(y2, y3));
-		Rectangle rect = new Rectangle(minx, maxy, maxx - minx, maxy - miny);
-		return rect;
+		return new Rectangle(minx, maxy, maxx - minx, maxy - miny);
 
 	}
 

@@ -64,4 +64,12 @@ public class Donut extends Circle {
 	public float calcArea() {
 		return (float) (Math.PI * Math.pow(getOutterRadius(), 2) - Math.PI * Math.pow(getInnerRadius(), 2));
 	}
+
+	@Override
+	public Rectangle getExternalRectangle() {
+		float rx = getX() - outterRadius;
+		float ry = getY() + outterRadius;
+		float sideLength = 2 * outterRadius;
+		return new Rectangle(rx, ry, sideLength, sideLength);
+	}
 }

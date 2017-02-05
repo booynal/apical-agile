@@ -78,8 +78,7 @@ public class Square extends ClosedShape {
 
 	@Override
 	public Rectangle getExternalRectangle() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Rectangle(x, y, sideLength, sideLength);
 	}
 
 }

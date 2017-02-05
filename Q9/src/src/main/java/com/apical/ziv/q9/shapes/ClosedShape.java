@@ -18,24 +18,25 @@ public abstract class ClosedShape implements Shape {
 	private static AtomicLong idGenerator = new AtomicLong();
 
 	private long idLong;
-	private String name;
+	private String type;
 
-	protected ClosedShape(String name) {
-		this.name = name;
+	protected ClosedShape(String type) {
+		this.type = type;
 		idLong = idGenerator.incrementAndGet();
 	}
 
 	@Override
 	public String toId() {
-		return String.format("%s_%s", name, idLong);
+		return String.format("%s_%s", type, idLong);
 	}
 
+	@Override
 	public String getType() {
-		return name;
+		return type;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setType(String name) {
+		type = name;
 	}
 
 	public long getIdLong() {

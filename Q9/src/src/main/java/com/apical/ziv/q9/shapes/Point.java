@@ -3,6 +3,7 @@
  */
 package com.apical.ziv.q9.shapes;
 
+import com.apical.ziv.q9.consts.ShapeTypeConsts;
 import com.apical.ziv.q9.interfaces.Shape;
 
 /**
@@ -23,7 +24,7 @@ public class Point implements Shape {
 
 	@Override
 	public String toString() {
-		return String.format("Point at (%.2f, %.2f)", x, y);
+		return String.format("%s at (%.2f, %.2f)", getType(), x, y);
 	}
 
 	public float getX() {
@@ -49,7 +50,7 @@ public class Point implements Shape {
 
 	@Override
 	public String getType() {
-		return "Point";
+		return ShapeTypeConsts.POINT;
 	}
 
 }
