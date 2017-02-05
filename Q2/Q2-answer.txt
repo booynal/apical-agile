@@ -1,0 +1,22 @@
+
+
+
+public static void main(String[] args) {
+	Vector<Payment> payments = new Vector<Payment>();
+	payments.add(new Payment(100));
+	payments.add(new Payment(50));
+
+	System.out.println(recursive_sum(payments));
+}
+
+static int recursive_sum(Vector<Payment> payments) {
+	if (null == payments || payments.isEmpty()) {
+		return 0;
+	} else {
+		return payments.remove(0).sum + recursive_sum(payments);
+	}
+}
+
+/*
+如果很大的payments，可能会导致虚拟机栈内存不够用（抛出StackOverFlowException）。每一次调用方法，都会在虚拟机栈的内存中分配一块区域（叫做栈针）用于记录当前调用方法的相关信息（方法出入口、局部变量表等）
+*/

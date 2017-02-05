@@ -1,0 +1,23 @@
+
+function areAnagrams(str1, str2) {
+	if (typeof str1 == 'string' && typeof str2 == 'string') {
+		// 1. clean
+		var s1 = str1.toLowerCase().replace(/\W+/g, '')
+		var s2 = str2.toLowerCase().replace(/\W+/g, '')
+
+		// 2. assert length
+		if (s1.length != s2.length) {
+			return false
+		}
+
+		// 3. split and compare
+		return s1.split('').sort().toString() == s2.split('').sort().toString()
+	} else {
+		console.error('error[001] type not string')
+		return false
+	}
+}
+
+console.log(areAnagrams('Angel', 'glean'))
+console.log(areAnagrams('Who am i', 'I am who'))
+console.log(areAnagrams('a', 'b'))

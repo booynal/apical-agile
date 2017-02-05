@@ -1,0 +1,17 @@
+
+var urls = [];
+urls.push("http://domain.com?q=1");
+urls.push("http://domain.com?q=2");
+urls.push("http://domain.com?q=3");
+
+var results = [];
+
+for (var i = 0; i < urls.length; i++) {
+	var index = i;
+	$http.get(urls[i], function(result){
+		results[index] = result;
+		if (results.length == urls.length) {
+			processResults(results);
+		}
+	});
+}

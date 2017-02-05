@@ -1,0 +1,25 @@
+/*
+Why?
+js的方法内部的this：总是指向调用者, 谁调用我，我就指向谁
+greet方法内部的this=window
+greet方法调用了nameProducer，那么nameProducer的方法内部的this=window
+所以getName方法中的"retrurn this.name"等价于"return window.name"。
+而window.name缺省是一个空串，所以最终打印出来的是"hello "
+==================
+How?
+1. 直接传递getName的返回值
+2. 使用call传递Person对象到getName的this上 [*]以下的代码为这个
+3. 更改nameProducer为persion
+*/
+
+var Person = function(name) {
+	this.name = name;
+};
+Person.prototype.getName = function() {
+	return this.name;
+};
+var greet = function(nameProducer) {
+	console.log("hello " + nameProducer.call(this));
+}
+var joe = new Person("Joe");
+greet.call(joe, joe.getName);

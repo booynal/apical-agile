@@ -1,0 +1,19 @@
+Consumer:
+while(true) {
+    synchroized(queue) {
+        while(queue.isEmpty()) {
+            queue.wait();
+        }
+        Integer el = queue.remove(0);
+        queue.notify();
+        processElement(el);
+    }
+}
+
+Producer:
+timer_tick() {
+    synchroized(queue) {
+        queue.add(Math.random());
+        queue.notify();
+    }
+}

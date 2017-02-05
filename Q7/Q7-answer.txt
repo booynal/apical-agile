@@ -1,0 +1,13 @@
+
+var sum = function(a, b) {
+	if (undefined === b) {
+		return function(b) {
+			return a + b;
+		}
+	} else {
+		return a + b;
+	}
+}
+
+console.log(sum(2,3));
+console.log(sum(2)(3));
