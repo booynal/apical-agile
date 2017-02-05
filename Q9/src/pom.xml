@@ -138,14 +138,6 @@
 					</archive>
 				</configuration>
 			</plugin>
-
-			<!-- 拷贝依赖的jar包到lib目录 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 
