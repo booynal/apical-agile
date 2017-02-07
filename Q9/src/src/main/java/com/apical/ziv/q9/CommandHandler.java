@@ -60,7 +60,7 @@ public class CommandHandler {
 		handle(System.in);
 	}
 
-	private void handle(InputStream in) {
+	public void handle(InputStream in) {
 		Scanner scanner = null;
 		try {
 			scanner = new Scanner(in);
