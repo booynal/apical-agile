@@ -37,7 +37,7 @@ public abstract class AbstractShapeCreator implements Creatable<Shape> {
 		throw new NotImplementedException();
 	}
 
-	protected ClosedShape createShape(String[] words) throws ShapeCreateException {
+	protected Shape createShape(String[] words) throws ShapeCreateException {
 		throw new NotImplementedException();
 	}
 

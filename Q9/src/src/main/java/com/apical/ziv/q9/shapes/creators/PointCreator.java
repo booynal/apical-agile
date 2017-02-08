@@ -34,8 +34,8 @@ public class PointCreator extends AbstractShapeCreator {
 	public Shape create(String input) throws ShapeCreateException {
 		Matcher matcher = compile.matcher(input);
 		if (matcher.find() && 2 == matcher.groupCount()) {
-			float x = NumberUtil.parseFloat(matcher.group(1));
-			float y = NumberUtil.parseFloat(matcher.group(2));
+			double x = NumberUtil.parsedouble(matcher.group(1));
+			double y = NumberUtil.parsedouble(matcher.group(2));
 			return new Point(x, y);
 		}
 		return null;

@@ -12,9 +12,9 @@ import com.apical.ziv.q9.exceptions.ShapeCreateException;
  */
 public class NumberUtil {
 
-	public static float parseFloat(String s) throws ShapeCreateException {
+	public static double parsedouble(String s) throws ShapeCreateException {
 		try {
-			return Float.parseFloat(s);
+			return Double.parseDouble(s);
 		} catch (NumberFormatException e) {
 			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_003, e.getMessage()));
 		}

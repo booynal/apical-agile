@@ -24,6 +24,7 @@ public class CircleValidator implements Validatable {
 		} else if (words.length > ShapeConsts.COMMAND_LINE_WORDS_COUNT_CIRCLE) {
 			throw new ValidateException(ErrorConsts.ERROR_002);
 		}
+		
 	}
 
 }

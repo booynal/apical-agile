@@ -22,7 +22,7 @@ public class ShapeCommand implements Command {
 
 	private static ShapeFactory shapeFactory = SpringContext.getBean(ShapeFactory.class);
 	private static ShapeMemory shapeMemory = SpringContext.getBean(ShapeMemory.class);
-
+	private static long shapeId = 0;
 	private String input;
 
 	public ShapeCommand(String input) {
@@ -36,8 +36,10 @@ public class ShapeCommand implements Command {
 			if (ShapeTypeConsts.isPoint(shape.getType())) {
 				new PointCommand((Point) shape).execute();
 			} else if (shape instanceof ClosedShape) {
-				shapeMemory.addShape((ClosedShape) shape);
-				System.out.println(shape);
+				ClosedShape cShape=(ClosedShape) shape;
+				cShape.setId(++shapeId);
+				shapeMemory.addShape(cShape);
+				//System.out.println("=> "+shape);
 			}
 		} else {
 			throw new ShapeException(String.format("%s: %s", ErrorConsts.ERROR_005, input));

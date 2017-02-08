@@ -6,6 +6,7 @@ package com.apical.ziv.q9.shapes;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.apical.ziv.q9.interfaces.Shape;
+import com.apical.ziv.q9.utils.DistanceUtil;
 
 /**
  * 图形
@@ -15,14 +16,8 @@ import com.apical.ziv.q9.interfaces.Shape;
  */
 public abstract class ClosedShape implements Shape {
 
-	private static AtomicLong idGenerator = new AtomicLong();
-
 	private long id;
 	private String type;
-
-	{
-		id = idGenerator.incrementAndGet();
-	}
 
 	protected ClosedShape(String type) {
 		this.type = type;
@@ -53,12 +48,51 @@ public abstract class ClosedShape implements Shape {
 	 *            给定的点
 	 * @return 是否在图形内
 	 */
-	public abstract boolean inside(Point point);
+	public  boolean inside(Point point){
+		return inside(point.getX() , point.getY());
+	}
+	public abstract boolean inside(double x,double y);
+	
+	public boolean isOverLap(ClosedShape shape){
+		Rectangle thisExtRect = getExternalRectangle();
+		Rectangle thatExtRect= shape.getExternalRectangle();
+		boolean intersect = thisExtRect.intersect(thatExtRect);
+		if(!intersect) return false;
+		return overLap(shape);
+		
+	}
+	protected boolean overLap(ClosedShape shape) {
+
+		if(shape instanceof Triangle){
+			return overLap((Triangle) shape);
+		}else if(shape instanceof Rectangle){
+			return overLap((Rectangle)shape);
+		}else if(shape instanceof Donut){
+			return overLap((Donut)shape);
+		}else if(shape instanceof Circle){
+			return overLap((Circle)shape);
+		}else {
+			if(Math.abs(DistanceUtil.calcIntersetArea(this,shape)- shape.calcArea())<0.01){
+				return true;
+			}else {
+				return false;
+			}
+			
+		}
+	
+	}
+	
+	protected abstract boolean overLap(Rectangle shape);
+	protected abstract boolean overLap(Circle shape);
+	protected abstract boolean overLap(Triangle shape);
+	protected abstract boolean overLap(Donut shape);
+	
+	protected abstract boolean intersect(ClosedShape shape);
 
 	/**
 	 * 计算图形的面积
 	 */
-	public abstract float calcArea();
+	public abstract double calcArea();
 
 	public abstract Rectangle getExternalRectangle();
 }

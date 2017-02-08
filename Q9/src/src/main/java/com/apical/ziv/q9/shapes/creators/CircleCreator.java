@@ -6,6 +6,7 @@ package com.apical.ziv.q9.shapes.creators;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.apical.ziv.q9.consts.ErrorConsts;
 import com.apical.ziv.q9.consts.ShapeTypeConsts;
 import com.apical.ziv.q9.exceptions.ShapeCreateException;
 import com.apical.ziv.q9.interfaces.Usageable;
@@ -45,9 +46,12 @@ public class CircleCreator extends AbstractShapeCreator {
 
 	@Override
 	protected ClosedShape createShape(String[] words) throws ShapeCreateException {
-		float x = NumberUtil.parseFloat(words[1]);
-		float y = NumberUtil.parseFloat(words[2]);
-		float radius = NumberUtil.parseFloat(words[3]);
+		double x = NumberUtil.parsedouble(words[1]);
+		double y = NumberUtil.parsedouble(words[2]);
+		double radius = NumberUtil.parsedouble(words[3]);
+		if(radius<=0){
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " radius:" +words[3]));
+		}
 		return new Circle(x, y, radius);
 	}
 

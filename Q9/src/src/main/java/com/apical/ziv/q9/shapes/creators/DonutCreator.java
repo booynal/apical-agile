@@ -6,6 +6,7 @@ package com.apical.ziv.q9.shapes.creators;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.apical.ziv.q9.consts.ErrorConsts;
 import com.apical.ziv.q9.consts.ShapeTypeConsts;
 import com.apical.ziv.q9.exceptions.ShapeCreateException;
 import com.apical.ziv.q9.interfaces.Usageable;
@@ -45,10 +46,21 @@ public class DonutCreator extends AbstractShapeCreator {
 
 	@Override
 	protected ClosedShape createShape(String[] words) throws ShapeCreateException {
-		float x = NumberUtil.parseFloat(words[1]);
-		float y = NumberUtil.parseFloat(words[2]);
-		float radius = NumberUtil.parseFloat(words[3]);
-		float radius2 = NumberUtil.parseFloat(words[4]);
+		double x = NumberUtil.parsedouble(words[1]);
+		double y = NumberUtil.parsedouble(words[2]);
+		double radius = NumberUtil.parsedouble(words[3]);
+		double radius2 = NumberUtil.parsedouble(words[4]);
+		if(radius<=0){
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " innerradius:" +words[3]));	
+		}
+		
+		if(radius2<=0){
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " outerradius:" +words[4]));	
+		}
+		if(radius>=radius2){
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_007, " innerradius:" +words[3] + " outerradius:"+ words[4]));
+		}
+		
 		return new Donut(x, y, Math.min(radius, radius2), Math.max(radius, radius2));
 	}
 
