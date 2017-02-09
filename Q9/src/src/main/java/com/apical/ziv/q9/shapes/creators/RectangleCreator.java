@@ -50,11 +50,11 @@ public class RectangleCreator extends AbstractShapeCreator {
 		double y = NumberUtil.parsedouble(words[2]);
 		double sideLength = NumberUtil.parsedouble(words[3]);
 		double side2Length = NumberUtil.parsedouble(words[4]);
-		if(sideLength<=0)
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " width:" +words[3]));
-		if(side2Length<=0)
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " width:" +words[4]));
-			
+		if (sideLength <= 0)
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " width:" + words[3]));
+		if (side2Length <= 0)
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " width:" + words[4]));
+
 		return new Rectangle(x, y, sideLength, side2Length);
 	}
 

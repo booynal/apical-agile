@@ -134,33 +134,45 @@ public class Triangle extends ClosedShape {
 		return false;
 	}
 
-
-	protected boolean overLap(Triangle tri){
-		if(!inside(tri.getX1(),tri.getY1())) return false;
-		if(!inside(tri.getX2(),tri.getY2())) return false;
-		if(!inside(tri.getX2(),tri.getY3())) return false;
+	protected boolean overLap(Triangle tri) {
+		if (!inside(tri.getX1(), tri.getY1()))
+			return false;
+		if (!inside(tri.getX2(), tri.getY2()))
+			return false;
+		if (!inside(tri.getX2(), tri.getY3()))
+			return false;
 		return true;
 	}
-	protected boolean overLap(Rectangle rect){
-		double x =rect.getX();
-		double y =rect.getY();
-		double w =rect.getWidth();
-		double h=rect.getHeight();
-		if(!inside(x,y)) return false;
-		if(!inside(x+w,y)) return false;
-		if(!inside(x+w,y+h)) return false;
-		if(!inside(x,y+h)) return false;
+
+	protected boolean overLap(Rectangle rect) {
+		double x = rect.getX();
+		double y = rect.getY();
+		double w = rect.getWidth();
+		double h = rect.getHeight();
+		if (!inside(x, y))
+			return false;
+		if (!inside(x + w, y))
+			return false;
+		if (!inside(x + w, y + h))
+			return false;
+		if (!inside(x, y + h))
+			return false;
 		return true;
 	};
-	protected boolean overLap(Donut donut){
+
+	protected boolean overLap(Donut donut) {
 		double x = donut.getX();
 		double y = donut.getY();
-		if(!inside(x,y)) return false;
+		if (!inside(x, y))
+			return false;
 		double radius = donut.getOutterRadius();
-		
-		if(Line2D.ptSegDist(x1, y1, x2, y2, x, y)<radius) return false;
-		if(Line2D.ptSegDist(x2, y2, x3, y3, x, y)<radius) return false;
-		if(Line2D.ptSegDist(x3, y3, x1, y1, x, y)<radius) return false;
+
+		if (Line2D.ptSegDist(x1, y1, x2, y2, x, y) < radius)
+			return false;
+		if (Line2D.ptSegDist(x2, y2, x3, y3, x, y) < radius)
+			return false;
+		if (Line2D.ptSegDist(x3, y3, x1, y1, x, y) < radius)
+			return false;
 		return true;
 	}
 
@@ -169,10 +181,14 @@ public class Triangle extends ClosedShape {
 		double x = circle.getX();
 		double y = circle.getY();
 		double r = circle.getRadius();
-		if(!inside(x,y)) return false;
-		if(Line2D.ptSegDist(x1, y1, x2, y2, x, y)<r) return false;
-		if(Line2D.ptSegDist(x2, y2, x3, y3, x, y)<r) return false;
-		if(Line2D.ptSegDist(x3, y3, x1, y1, x, y)<r) return false;
+		if (!inside(x, y))
+			return false;
+		if (Line2D.ptSegDist(x1, y1, x2, y2, x, y) < r)
+			return false;
+		if (Line2D.ptSegDist(x2, y2, x3, y3, x, y) < r)
+			return false;
+		if (Line2D.ptSegDist(x3, y3, x1, y1, x, y) < r)
+			return false;
 		return true;
 	}
 

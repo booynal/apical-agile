@@ -49,8 +49,8 @@ public class CircleCreator extends AbstractShapeCreator {
 		double x = NumberUtil.parsedouble(words[1]);
 		double y = NumberUtil.parsedouble(words[2]);
 		double radius = NumberUtil.parsedouble(words[3]);
-		if(radius<=0){
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " radius:" +words[3]));
+		if (radius <= 0) {
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " radius:" + words[3]));
 		}
 		return new Circle(x, y, radius);
 	}

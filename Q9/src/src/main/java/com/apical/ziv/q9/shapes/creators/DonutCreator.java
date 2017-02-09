@@ -50,17 +50,17 @@ public class DonutCreator extends AbstractShapeCreator {
 		double y = NumberUtil.parsedouble(words[2]);
 		double radius = NumberUtil.parsedouble(words[3]);
 		double radius2 = NumberUtil.parsedouble(words[4]);
-		if(radius<=0){
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " innerradius:" +words[3]));	
+		if (radius <= 0) {
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " innerradius:" + words[3]));
 		}
-		
-		if(radius2<=0){
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " outerradius:" +words[4]));	
+
+		if (radius2 <= 0) {
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " outerradius:" + words[4]));
 		}
-		if(radius>=radius2){
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_007, " innerradius:" +words[3] + " outerradius:"+ words[4]));
+		if (radius >= radius2) {
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_007, " innerradius:" + words[3] + " outerradius:" + words[4]));
 		}
-		
+
 		return new Donut(x, y, Math.min(radius, radius2), Math.max(radius, radius2));
 	}
 

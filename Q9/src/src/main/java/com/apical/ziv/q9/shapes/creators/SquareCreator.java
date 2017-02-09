@@ -49,9 +49,9 @@ public class SquareCreator extends AbstractShapeCreator {
 		double x = NumberUtil.parsedouble(words[1]);
 		double y = NumberUtil.parsedouble(words[2]);
 		double sideLength = NumberUtil.parsedouble(words[3]);
-		if(sideLength<=0)
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " width:" +words[3]));
-		
+		if (sideLength <= 0)
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_006, " width:" + words[3]));
+
 		return new Square(x, y, sideLength);
 	}
 

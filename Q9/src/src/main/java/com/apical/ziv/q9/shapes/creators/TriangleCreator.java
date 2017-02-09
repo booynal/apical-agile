@@ -54,17 +54,17 @@ public class TriangleCreator extends AbstractShapeCreator {
 		double y2 = NumberUtil.parsedouble(words[4]);
 		double x3 = NumberUtil.parsedouble(words[5]);
 		double y3 = NumberUtil.parsedouble(words[6]);
-		if(x1==x2 && y1==y2){
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_008, " point(" +words[1] +"," + words[2] +")"));
+		if (x1 == x2 && y1 == y2) {
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_008, " point(" + words[1] + "," + words[2] + ")"));
 		}
-		if(x2==x3 && y2==y3){
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_008, " point(" +words[3] +"," + words[4] +")"));
+		if (x2 == x3 && y2 == y3) {
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_008, " point(" + words[3] + "," + words[4] + ")"));
 		}
-		if(x3==x1 && y3==y1){
-			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_008, " point(" +words[5] +"," + words[6] +")"));
+		if (x3 == x1 && y3 == y1) {
+			throw new ShapeCreateException(String.format("%s: %s", ErrorConsts.ERROR_008, " point(" + words[5] + "," + words[6] + ")"));
 		}
-		if(Line2D.ptLineDistSq(x1,y1,x2,y2,x3,y3)==0.0){
-			throw new ShapeCreateException( ErrorConsts.ERROR_009);
+		if (Line2D.ptLineDistSq(x1, y1, x2, y2, x3, y3) == 0.0) {
+			throw new ShapeCreateException(ErrorConsts.ERROR_009);
 		}
 		return new Triangle(x1, y1, x2, y2, x3, y3);
 	}

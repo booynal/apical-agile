@@ -18,9 +18,7 @@ public class ErrorConsts {
 	public static final String ERROR_007 = "ERROR 007: innerradius should be little than outerradius";
 	public static final String ERROR_008 = "ERROR 008: two point shouldn't be the same coordinate";
 	public static final String ERROR_009 = "ERROR 009: the three point shouldn't be the same line";
-	
-	
-	
+
 	public static final String ERROR_301 = "ERROR 301: file not found";
 
 }

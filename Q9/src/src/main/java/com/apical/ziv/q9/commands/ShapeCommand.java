@@ -36,10 +36,10 @@ public class ShapeCommand implements Command {
 			if (ShapeTypeConsts.isPoint(shape.getType())) {
 				new PointCommand((Point) shape).execute();
 			} else if (shape instanceof ClosedShape) {
-				ClosedShape cShape=(ClosedShape) shape;
+				ClosedShape cShape = (ClosedShape) shape;
 				cShape.setId(++shapeId);
 				shapeMemory.addShape(cShape);
-				//System.out.println("=> "+shape);
+				// System.out.println("=> "+shape);
 			}
 		} else {
 			throw new ShapeException(String.format("%s: %s", ErrorConsts.ERROR_005, input));

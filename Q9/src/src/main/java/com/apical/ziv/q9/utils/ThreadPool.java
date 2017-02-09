@@ -4,23 +4,25 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ThreadPool {
+
 	private static ExecutorService executorService;
 	private static int threadSize;
-	static{
+	static {
 		int availableProcessors = Runtime.getRuntime().availableProcessors();
-		if(availableProcessors>=2){
-			threadSize= availableProcessors-2 ;
-		}else{
+		if (availableProcessors >= 2) {
+			threadSize = availableProcessors - 2;
+		} else {
 			threadSize = availableProcessors;
 		}
-		executorService= Executors.newFixedThreadPool(threadSize);
+		executorService = Executors.newFixedThreadPool(threadSize);
 	}
+
 	public static ExecutorService getExecutorService() {
 		return executorService;
 	}
+
 	public static int getThreadSize() {
 		return threadSize;
 	}
 
-	
 }
